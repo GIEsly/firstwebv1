@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #e2f3f5;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navigation {
+  background-color: #3d5af1;
+}
+
+.container {
+  padding: 2em;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.logo span {
+  color: #e2f3f5;
+  font-style: italic;
+}
+
+.inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em 2em;
+}
+.inner .openBtn {
+  width: 1.6em;
+  cursor: pointer;
+}
+
+nav {
+  display: none;
+}
+
+.hero .left-content {
+  text-align: center;
+}
+.hero .left-content .name {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.hero .left-content .title-name {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  line-height: 1.1em;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+.hero .left-content .title-name span {
+  font-size: 3.3rem;
+}
+.hero .left-content .info-name {
+  width: 90%;
+  margin-inline: auto;
+  font-size: 0.9rem;
+  margin-bottom: 2em;
+}
+
+.list {
+  background-color: #0e153a;
+  color: #e2f3f5;
+}
+.list ul li {
+  margin-bottom: 1em;
+  margin-left: 2em;
+  font-size: 0.9rem;
+  position: relative;
+}
+.list ul li:before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-image: url(/images/icons/check-mark.png);
+  background-size: contain;
+  position: absolute;
+  left: -2.5em;
+  top: -0.4em;
+}
+
+.feedbacks .feed-list {
+  margin-top: 5em;
+}
+.feedbacks .feed-list li {
+  background-color: #3d5af1;
+  color: #e2f3f5;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.8em;
+  width: 88%;
+  margin-inline: auto;
+  margin-bottom: 6em;
+}
+.feedbacks .feed-list li img {
+  margin-top: -5.5em;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  border: 10px solid #3d5af1;
+}
+
+.contact {
+  background-color: #0e153a;
+  color: #e2f3f5;
+}
+.contact .left-contact h2 {
+  margin-top: 2em;
+  text-transform: uppercase;
+  padding-bottom: 0.7em;
+}
+.contact .left-contact label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.contact .left-contact input, .contact .left-contact textarea {
+  padding: 0.5em;
+  border: none;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.contact .left-contact input[type=submit] {
+  background-color: #3d5af1;
+  color: #e2f3f5;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.6em;
+  width: unset;
+  padding: 0.5em 2em;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.contact .left-contact input[type=submit]:hover {
+  background-color: rgb(0, 182, 0);
+}
+.contact .right-contact iframe {
+  width: 100%;
+  height: 330px;
+}
+
+footer {
+  background-color: #0e153a;
+  color: #e2f3f5;
+  font-style: italic;
+}
+footer .inner {
+  text-align: center;
+}
+footer .inner p {
+  text-align: center;
+  opacity: 0.3;
+}

@@ -1,0 +1,205 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;}
+
+// -------------------------------------------
+$colors:(
+    dark-blue: #0e153a,
+    skyblue: #3d5af1,
+    lightBlue: #22d1ee,
+    semiWhite: #e2f3f5,
+);
+
+@function colors($color-name){
+    @return map-get($colors, $color-name )
+};
+
+// ------------------------------------------
+
+body {
+    background-color:colors(semiWhite)
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navigation {
+    background-color: colors(skyblue);
+}
+
+.container {
+    padding: 2em;
+}
+
+.logo {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+
+    span {
+        color:colors(semiWhite);
+        font-style: italic;;
+    }
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    .openBtn {
+        width: 1.6em;
+        cursor: pointer;
+    }
+}
+
+nav {
+    display: none;
+}
+
+// Hero Section ----------------------
+.hero {
+    .left-content {
+        text-align: center;
+        .name {
+            text-transform: uppercase;
+            font-size: .9rem;
+        }
+        .title-name {
+            font-size:2.3rem;
+            text-transform: uppercase;
+            line-height: 1.1em;
+            margin-top: .1em;
+            margin-bottom: .1em;
+            span {
+                font-size: 3.3rem;
+            }
+        }
+        .info-name {
+            width: 90%;
+            margin-inline: auto;
+            font-size: .9rem;
+            margin-bottom: 2em;
+        }
+    }
+}
+
+.list {
+    background-color: colors(dark-blue);
+    color: colors(semiWhite);
+
+    ul {
+        li {
+            margin-bottom: 1em;
+            margin-left: 2em;
+            font-size: .9rem;
+            position: relative;
+
+            &:before {
+                content: '';
+                width: 25px;
+                height: 25px;
+                background-image: url(/images/icons/check-mark.png);
+                background-size: contain;
+                position: absolute;
+                left: -2.5em;
+                top: -.4em;
+            }
+        }
+    }
+}
+
+.feedbacks {
+    .feed-list {
+
+        margin-top: 5em;
+        li {
+            background-color: colors(skyblue);
+            color: colors(semiWhite);
+            padding: 2rem;
+            text-align: center;
+            border-radius: .8em;
+            width: 88%;
+            margin-inline: auto;
+            margin-bottom: 6em;
+
+            img {
+                margin-top: -5.5em;
+                width: 7em;
+                height: 7em;
+                border-radius: 50%;
+                border: 10px solid colors(skyblue);
+            }
+        }
+    }
+}
+
+.contact {
+    background-color: colors(dark-blue);
+    color: colors(semiWhite);
+
+    .left-contact {
+        
+        h2 {
+            margin-top: 2em;
+            text-transform: uppercase;
+            padding-bottom: .7em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: .5em;
+        }
+
+        input, textarea {
+            padding: .5em;
+            border: none;
+            width: 100%;
+            margin-bottom: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: colors(skyblue);
+            color: colors(semiWhite);
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: .6em;
+            width: unset;
+            padding: .5em 2em;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(0, 182, 0);
+            }
+        }
+    }
+
+    .right-contact {
+        iframe {
+            width: 100%;
+            height: 330px;
+        }
+    }
+}
+
+footer {
+    background-color: colors(dark-blue);
+    color: colors(semiWhite);
+    font-style: italic;
+    .inner {
+        text-align: center;
+        p {
+            text-align: center;
+            opacity: .3;
+        }
+    }
+}
+
