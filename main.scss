@@ -13,6 +13,21 @@ $colors:(
 };
 
 // ------------------------------------------
+// ---- Media Query Section -----------------
+$tablet:500px;
+@mixin table {
+    @media(min-width:#{$tablet}){
+        @content;
+    }
+}
+
+$tablet-712:712px;
+@mixin tablet-712 {
+    @media (min-width:#{$tablet-712}){
+        @content;
+    }
+}
+// ------------------------------------------
 
 body {
     background-color:colors(semiWhite)
@@ -36,6 +51,11 @@ a {
 
 .container {
     padding: 2em;
+    @include tablet-712() {
+        width: 90%;
+        margin-inline: auto;
+        padding: 0;
+    }
 }
 
 .logo {
@@ -54,9 +74,18 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
+
+    @include tablet-712(){
+        display: grid;
+        grid-template-columns: 180px auto;
+    }
+
     .openBtn {
         width: 1.6em;
         cursor: pointer;
+        @include tablet-712(){
+            display: none;
+        }
     }
 }
 
@@ -66,11 +95,34 @@ nav {
 
 // Hero Section ----------------------
 .hero {
+    .container {
+        @include tablet-712() {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            align-items: center;
+            margin-top: 5rem;
+            margin-bottom: 6em;
+        }
+    }
     .left-content {
         text-align: center;
+        @include tablet-712(){
+            text-align: left;
+        }
         .name {
             text-transform: uppercase;
             font-size: .9rem;
+            font-weight: bold;
+
+            @include table() {
+                font-size: 1.2rem;
+                margin-top: 2em;
+            }
+            @include tablet-712(){
+                font-size: .8rem;
+            }
+
         }
         .title-name {
             font-size:2.3rem;
@@ -78,8 +130,24 @@ nav {
             line-height: 1.1em;
             margin-top: .1em;
             margin-bottom: .1em;
+            color: colors(skyblue);
+
+            @include table(){
+                font-size: 3em;
+            }
+            @include tablet-712(){
+                font-size: 2.3rem;
+                text-align: left;
+            }
+
             span {
                 font-size: 3.3rem;
+                @include table(){
+                    font-size: 4.5rem;
+                }
+                @include tablet-712(){
+                    font-size: 3.5rem;
+                }
             }
         }
         .info-name {
@@ -87,6 +155,26 @@ nav {
             margin-inline: auto;
             font-size: .9rem;
             margin-bottom: 2em;
+            opacity: .5;
+            @include table() {
+                font-size: 1.5rem;
+            }
+            @include tablet-712(){
+                margin: 0;
+                padding: 0;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .right-content {
+        @include table(){
+            width: 85%;
+            margin-inline: auto;
+        }
+        @include tablet-712(){
+            width: 100%;
+            margin-inline: auto;
         }
     }
 }
@@ -95,12 +183,41 @@ nav {
     background-color: colors(dark-blue);
     color: colors(semiWhite);
 
+    .container {
+        @include tablet-712(){
+            display: grid;
+            // grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            grid-template-rows: repeat(2, 1fr);
+            position: relative;
+        }
+    }
+
+    img {
+        @include tablet-712(){
+            display: grid;
+            place-items: center;
+            position: absolute;
+            bottom: 4em;
+        }
+    }
+
     ul {
+        @include tablet-712(){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            padding: 1em;
+            margin-top: 5em;
+        }
         li {
             margin-bottom: 1em;
             margin-left: 2em;
             font-size: .9rem;
             position: relative;
+            @include tablet-712(){
+                font-size: 1.2rem;
+            }
 
             &:before {
                 content: '';
@@ -118,8 +235,15 @@ nav {
 
 .feedbacks {
     .feed-list {
+        @include tablet-712(){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
 
         margin-top: 5em;
+
+
+
         li {
             background-color: colors(skyblue);
             color: colors(semiWhite);
@@ -129,6 +253,9 @@ nav {
             width: 88%;
             margin-inline: auto;
             margin-bottom: 6em;
+            @include tablet-712(){
+                margin-top: 5em;
+            }
 
             img {
                 margin-top: -5.5em;
@@ -144,6 +271,17 @@ nav {
 .contact {
     background-color: colors(dark-blue);
     color: colors(semiWhite);
+
+    .container {
+        @include tablet-712(){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 3em;
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+    }
 
     .left-contact {
         
@@ -186,6 +324,11 @@ nav {
         iframe {
             width: 100%;
             height: 330px;
+
+            @include tablet-712(){
+                width: 100%;
+                height: 280px;
+            }
         }
     }
 }
@@ -199,6 +342,69 @@ footer {
         p {
             text-align: center;
             opacity: .3;
+        }
+    }
+}
+
+.mobile-open {
+    display: block;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 60%;
+    z-index: 999;
+    background-color: colors(skyblue);
+    height: 100vh;
+    padding: 1em;
+    @include tablet-712(){
+        display: flex;
+        justify-content: space-between;
+        position: unset;
+        height: auto;
+        width: 100%;
+        background: none;
+        padding: 0;
+    }
+
+    .closeBtn {
+        width: 2em;
+        float: right;
+        margin: 1em;
+        @include tablet-712(){
+            display: none;
+        }
+    }
+
+    .primary-nav, .second-nav {
+        margin-top: 6em;
+        @include tablet-712(){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+        }
+        
+        li {
+
+            a {
+                color: colors(semiWhite);
+                text-decoration: none;
+                text-transform: upper;
+                display: block;
+                padding: .6em;
+                width: 100%;
+                @include tablet-712(){
+                    font-size: .85rem;
+                }
+            }
+
+            &:hover {
+                background-color: colors(dark-blue);
+            }
+
         }
     }
 }
